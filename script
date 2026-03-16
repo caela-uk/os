@@ -22,5 +22,13 @@ gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 
+# Wallpaper application
+sudo mkdir -p /usr/share/backgrounds/bubblegum/
+sudo curl -L https://raw.githubusercontent.com/caela-uk/os/main/backgrounds/bubblegum/default.png -o /usr/share/backgrounds/bubblegum/default.png
+WP_PATH="file:///usr/share/backgrounds/bubblegum/default.png"
+gsettings set org.gnome.desktop.background picture-uri "$WP_PATH"
+gsettings set org.gnome.desktop.background picture-uri-dark "$WP_PATH"
+gsettings set org.gnome.desktop.screensaver picture-uri "$WP_PATH"
+
 # Flatpak theming
 flatpak override --user --filesystem=$HOME/.icons:ro --filesystem=$HOME/.themes:ro
