@@ -7,7 +7,6 @@ cd paru-bin && makepkg -si --noconfirm && cd .. && rm -rf paru-bin
 
 # Raw GNOME install
 sudo pacman -S --noconfirm adw-gtk3 gnome-shell nautilus gnome-control-center gdm networkmanager gparted flatpak steam-devices
-
 sudo systemctl enable gdm NetworkManager
 
 # Bibata cursors
