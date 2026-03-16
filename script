@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# paru and system setup
+sudo pacman -S --needed --noconfirm base-devel git
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin && makepkg -si --noconfirm && cd .. && rm -rf paru-bin
+
+# Raw GNOME install
+sudo pacman -S --noconfirm adw-gtk3 gnome-shell nautilus gnome-control-center gdm networkmanager gparted flatpak steam-devices
+
+sudo systemctl enable gdm NetworkManager
+
+# Bibata cursors
+paru -S --noconfirm bibata-cursor-theme-bin
+
+# Flatpak/flathub preinstalls
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install -y flathub com.protonvpn.www io.github.kolunmi.Bazaar io.missioncenter.MissionCenter org.gnome.TextEditor com.mattjakeman.ExtensionManager org.gnome.FileRoller org.altlinux.Tuner io.gitlab.adhami3310.Impression com.google.Chrome com.raggesilver.BlackBox com.github.tchx84.Flatseal com.vixalien.sticky org.gnome.Showtime it.mijorus.smile org.gnome.Papers org.gnome.Loupe com.github.finefindus.eyedropper com.valvesoftware.Steam
+
+# Theming
+gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+# Flatpak theming
+flatpak override --user --filesystem=$HOME/.icons:ro --filesystem=$HOME/.themes:ro
