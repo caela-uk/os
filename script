@@ -14,7 +14,7 @@ paru -S --noconfirm bibata-cursor-theme-bin
 
 # Flatpak/flathub preinstalls
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub com.protonvpn.www io.github.kolunmi.Bazaar io.missioncenter.MissionCenter org.gnome.TextEditor com.mattjakeman.ExtensionManager org.gnome.FileRoller org.altlinux.Tuner io.gitlab.adhami3310.Impression com.google.Chrome com.raggesilver.BlackBox com.github.tchx84.Flatseal com.vixalien.sticky org.gnome.Showtime it.mijorus.smile org.gnome.Papers org.gnome.Loupe com.github.finefindus.eyedropper com.valvesoftware.Steam
+flatpak install -y flathub org.gnome.clocks org.gnome.Decibels org.gnome.Snapshot org.gnome.Calculator com.protonvpn.www io.github.kolunmi.Bazaar io.missioncenter.MissionCenter org.gnome.TextEditor com.mattjakeman.ExtensionManager org.gnome.FileRoller org.altlinux.Tuner io.gitlab.adhami3310.Impression com.google.Chrome com.raggesilver.BlackBox com.github.tchx84.Flatseal com.vixalien.sticky org.gnome.Showtime it.mijorus.smile org.gnome.Papers org.gnome.Loupe com.github.finefindus.eyedropper com.valvesoftware.Steam
 
 # Theming and GNOME settings sorta stuff
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
